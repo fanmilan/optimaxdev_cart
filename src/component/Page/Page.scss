@@ -1,0 +1,23 @@
+.page{
+
+
+  &__inside{
+    max-width:800px;
+    min-width:320px;
+    padding:0 10px;
+    margin: auto;
+
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+  }
+}
+
+.main{
+  flex-grow:1;
+}
+
+.footer{
+  background:black;
+  height:40px;
+}
