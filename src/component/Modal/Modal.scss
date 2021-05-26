@@ -1,0 +1,27 @@
+.modal{
+  position:fixed;
+  background:rgba(0,0,0,0.5);
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+
+  &__inside{
+    background:white;
+    width:100%;
+    max-width:500px;
+    margin:50% auto 0 auto;
+    padding: 15px;
+    transform: translateY(-50%);
+    position:relative;
+  }
+
+  &__close-btn{
+    position:absolute;
+    right:0;
+    top:0;
+  }
+
+
+
+}
