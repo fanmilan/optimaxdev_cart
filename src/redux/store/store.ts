@@ -1,4 +1,12 @@
-import {createStore} from "redux";
-import {cartReducer} from "../reducers/cart";
+import createSagaMiddleware from 'redux-saga'
+import {createStore, applyMiddleware} from "redux";
+import {rootReducer} from "../reducers";
+import {cartSaga} from "../sagas/cart";
 
-export const store = createStore(cartReducer);
+const sagaMiddleware = createSagaMiddleware();
+
+export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(cartSaga);
+
+export type stateT = ReturnType<typeof store.getState>

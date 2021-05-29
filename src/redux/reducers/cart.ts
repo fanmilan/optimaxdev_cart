@@ -1,29 +1,67 @@
-import {cartStateT, Constants} from "../types/cart";
+import {cartStateT, cartItemT, Constants} from "../types/cart";
+import {actionT} from "../actions/cart";
 
 const initialState = {
-    isLoading: false,
-    items: [{
-        id: 1,
-        name: 'Hello',
-        price: 1000,
-        quantity: 1
-    },
-        {
-            id: 2,
-            name: 'Glasses',
-            price: 2000,
-            quantity: 3
-        }]
+    isLoading: true,
+    openAddForm: false,
+    items: [],
 }
 
-export const cartReducer = (state: cartStateT = initialState, action: any) => {
+export const cartReducer = (state: cartStateT = initialState, action: actionT) => {
     switch (action.type) {
-        case Constants.CHANGE_QUANTITY:
+        case Constants.GET_ITEMS_REQUEST:
+            return {
+                ...state,
+                isLoading: false
+            }
+        case Constants.GET_ITEMS_SUCCESS:
+            return {
+                ...state,
+                items: action.payload,
+                isLoading: false
+            }
+        case Constants.GET_ITEMS_ERROR:
+            return {
+                ...state,
+                items: [],
+                isLoading: false
+            }
+        case Constants.OPEN_ADD_FORM:
+            return {
+                ...state,
+                openAddForm: true
+            }
+        case Constants.CLOSE_ADD_FORM:
+            return {
+                ...state,
+                openAddForm: false
+            }
+        case Constants.ADD_ITEM:
+            return {
+                ...state,
+                items: [{
+                    ...action.payload,
+                    id: getNextId(state.items)
+                    },
+                    ...state.items],
+                openAddForm: false
+            }
+        case Constants.INCREMENT_QUANTITY:
             return {
                 ...state,
                 items: state.items.map((item => {
-                    if (item.id === action.payload.id) {
-                        item.quantity = action.payload.quantity
+                    if (item.id === action.payload) {
+                        item.quantity = item.quantity + 1
+                    }
+                    return item;
+                }))
+            }
+        case Constants.DECREMENT_QUANTITY:
+            return {
+                ...state,
+                items: state.items.map((item => {
+                    if (item.id === action.payload) {
+                        if (item.quantity > 1) item.quantity = item.quantity - 1
                     }
                     return item;
                 }))
@@ -37,3 +75,10 @@ export const cartReducer = (state: cartStateT = initialState, action: any) => {
             return state;
     }
 }
+
+
+/**
+ * Get Next Id for new cart item
+ * @param items: array of cart items
+ */
+const getNextId = (items: Array<cartItemT>) => items.reduce((max: number, item) => (max < item.id) ? item.id : max, 0) + 1;
