@@ -41,10 +41,10 @@ export const Form = ({addItem}: formP) => {
         if (String(value).trim().length === 0) return 'This field is required';
         switch (name) {
             case 'quantity':
-                if (value < 1) return 'This field should be more then 1';
+                if (value < 1) return 'This field should be greater or equal then 1';
                 break;
             case 'price':
-                if (value <= 0) return 'This field should be more then 0';
+                if (value <= 0) return 'This field should be greater then 0';
                 break;
         }
         return false;
@@ -124,6 +124,7 @@ export const Form = ({addItem}: formP) => {
                        value={form.quantity}
                        min={1}
                        required
+                       data-testid={'input-quantity'}
                 />
             </Field>
             <div className="new-item-form__btns">
