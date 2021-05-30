@@ -9,11 +9,6 @@ const initialState = {
 
 export const cartReducer = (state: cartStateT = initialState, action: actionT) => {
     switch (action.type) {
-        case Constants.GET_ITEMS_REQUEST:
-            return {
-                ...state,
-                isLoading: false
-            }
         case Constants.GET_ITEMS_SUCCESS:
             return {
                 ...state,

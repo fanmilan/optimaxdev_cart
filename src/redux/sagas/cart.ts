@@ -1,9 +1,8 @@
-import { call, put, takeEvery, StrictEffect } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import {cartItemT, Constants} from "../types/cart";
 import {getCartItemsApi} from "../../api/cartApi";
-import {actionT, getItems, getItemsError} from "../actions/cart";
+import {getItems, getItemsError} from "../actions/cart";
 
-/*Generator<StrictEffect, void, Array<cartItemT>>*/
 
 function* fetchCart()  {
     try {

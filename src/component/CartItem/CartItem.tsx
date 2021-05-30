@@ -17,7 +17,7 @@ export const CartItem = ({item, deleteItem, decrementQuantity, incrementQuantity
                 <CartItemPrice price={item.price} quantity={item.quantity}/>
             </div>
             <div className="cart-item__actions">
-                <button type={'button'} className="cart-item__delete-btn btn btn_small" onClick={deleteItem} />
+                <button data-testid='delete-btn' type={'button'} className="cart-item__delete-btn btn btn_small" onClick={deleteItem} />
                 <QuantitySwitcher quantity={item.quantity} decrementQuantity={decrementQuantity} incrementQuantity={incrementQuantity}/>
             </div>
         </div>
