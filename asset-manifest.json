@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/optimaxdev_cart/static/css/main.54e3932d.chunk.css",
+    "main.js": "/optimaxdev_cart/static/js/main.25a8f948.chunk.js",
+    "main.js.map": "/optimaxdev_cart/static/js/main.25a8f948.chunk.js.map",
+    "runtime-main.js": "/optimaxdev_cart/static/js/runtime-main.db69e2d0.js",
+    "runtime-main.js.map": "/optimaxdev_cart/static/js/runtime-main.db69e2d0.js.map",
+    "static/css/2.679831fc.chunk.css": "/optimaxdev_cart/static/css/2.679831fc.chunk.css",
+    "static/js/2.2adb6705.chunk.js": "/optimaxdev_cart/static/js/2.2adb6705.chunk.js",
+    "static/js/2.2adb6705.chunk.js.map": "/optimaxdev_cart/static/js/2.2adb6705.chunk.js.map",
+    "static/js/3.965b9c4d.chunk.js": "/optimaxdev_cart/static/js/3.965b9c4d.chunk.js",
+    "static/js/3.965b9c4d.chunk.js.map": "/optimaxdev_cart/static/js/3.965b9c4d.chunk.js.map",
+    "index.html": "/optimaxdev_cart/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/optimaxdev_cart/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.54e3932d.chunk.css.map": "/optimaxdev_cart/static/css/main.54e3932d.chunk.css.map",
+    "static/js/2.2adb6705.chunk.js.LICENSE.txt": "/optimaxdev_cart/static/js/2.2adb6705.chunk.js.LICENSE.txt",
+    "static/media/CartItem.scss": "/optimaxdev_cart/static/media/delete_btn.7549979e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db69e2d0.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.2adb6705.chunk.js",
+    "static/css/main.54e3932d.chunk.css",
+    "static/js/main.25a8f948.chunk.js"
+  ]
+}
